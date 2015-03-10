@@ -1,4 +1,4 @@
-@import "normalize";
+	@import "normalize";
 @import "fonts";
 @import "animate";
 @import "mixins";
@@ -22,7 +22,7 @@ body{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	background: #000 url(../i/moto.jpg) no-repeat 0 0;
+	background: #000;
 }
 
 a{
@@ -39,12 +39,14 @@ a:hover{
 }
 
 header{
-	padding: 20px 0;
-	position: relative;
-
-	.logo{
-		@include fontsize(4.4);
-	}
+	height: 85px;
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+	background: #000;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 1);
+	-moz-box-shadow:    0px 3px 5px 0px rgba(50, 50, 50, 1);
+	box-shadow:         0px 3px 5px 0px rgba(50, 50, 50, 1);
 }
 
 main{
@@ -52,10 +54,8 @@ main{
 }
 
 footer{
-	margin: 90px 0 0;
-	padding: 40px 0;
-	background: #360309;
-	min-height: 200px;
+	background: #000;
+	height: 200px;
 }
 
 input,
@@ -72,62 +72,69 @@ input{
 	@include border-radius(3px);
 }
 
+h3.title{
+	font: 48px "Russo One";
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	padding: 40px 0;
+	margin: 0;
+	text-transform: uppercase;
+
+	&.white{
+		color: #fff;
+	}
+}
+
+.btn{
+	display: block;
+	width: 195px;
+	height: 50px;
+	background: rgba(255, 255, 255, 0.4);
+	margin: 20px auto;
+	color: #000;
+	text-align: center;
+	text-transform: uppercase;
+	font: 16px "Myriad Pro";
+	font-weight: bold;
+	border: 3px solid #000;
+	text-decoration: none;
+	line-height: 56px;
+	transition: all .5s;
+	-webkit-transition: all .5s;
+
+	&:hover{
+		background: #000;
+		color: #fff;
+	}
+}
 
 /* BEM styles */
 
-.logo{
-	text-decoration: none;
-	font: 50px 'Russo One', sans-serif;
-
-	&-wrp{
-		text-align: center;
-	}
-}
-
-.title{
-	font: 50px 'Russo One', sans-serif;
-	color: #ebecee;
-	text-transform: uppercase;
-	text-align: center;
-	margin: 0 0 40px 0;
-	text-shadow: 0px 0px 15px #880D1B;
-}
-
-.tels{
-	position: absolute;
-	top: 35px;
-	right: 0;
-
-	&__item{
-
-	}
-}
-
 nav{
-	text-align: center;
-	margin: 30px 0 0;
+	float: right;
 
 	ul{
-		margin: 0;
 		padding: 0;
+		margin: 35px 0 0;
 
 		li{
-			display: inline;
 			list-style: none;
-			margin: 0 0 0 20px;
+			display: inline;
+			margin: 0 0 0 15px;
 
 			a{
-				color: #ebecee;
+				color: #fff;
+				text-decoration: none;
 				text-transform: uppercase;
 				font-size: 18px;
-				letter-spacing: 1px;
-				font-family: 'Russo One', sans-serif;
-				text-decoration: none;
+				font-family: "Poiret One";
+				font-weight: 100;
 				transition: all .3s;
 				-webkit-transition: all .3s;
 
 				&:hover{
-					color: #FF7437;
+					color: #ff9c00;
 				}
 			}
 		}
@@ -135,98 +142,92 @@ nav{
 }
 
 .services{
-	margin: 20px 0 0;
-	padding: 40px 20px;
-	background: #252525;
-	border-top: 4px solid #360309;
-
-	&__item{
-		display: inline-block;
-		vertical-align: top;
-		width: 33%;
-		box-sizing: border-box;
-		text-align: center;
-		margin: 0 0 50px 0;
-
-		&-icon{
-			margin: auto;
-			overflow: hidden;
-
-			img{
-				width: 90%;
-			}
-		}
-
-		&-name{
-			font-size: 22px;
-			font-family: 'Russo One', sans-serif;
-			letter-spacing: 1px;
-			color: #FF7437;
-			margin: 15px 0 20px 0;
-		}
-		&-desc{
-			text-align: left;
-			padding: 0 20px;
-			line-height: 20px;
-		}
-	}
+	min-height: 900px;
 }
 
 .interview{
-	margin: 20px 0 0;
-	padding: 40px 40px;
-	background: #252525;
-	border-top: 4px solid #360309;
+	height: 1280px;
+	background: url(../i/interview_bg.jpg) center 0 no-repeat;
+
+	&__masonry{
+		width: 1020px;
+		margin: 0 -20px 0 0;
+	}
 
 	&__item{
-		display: table;
-		clear: both;
-		margin: 0 0 50px 0;
+		float: left;
+		width: 320px;
+		background: rgba(255, 255, 255, 0.8);
+		padding: 10px;
+		margin: 0 20px 20px 0;
+		box-sizing: border-box;	
+		-webkit-box-shadow: 0px 0px 5px 1px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow:    0px 0px 5px 1px rgba(50, 50, 50, 0.75);
+		box-shadow:         0px 0px 5px 1px rgba(50, 50, 50, 0.75);
 
-		&-pic{
-			width: 25%;
-			display: inline-block;
-			vertical-align: middle;
-			
-			img{
-				@include radius;
-			}
+		&:nth-child(3n+3){
+			margin-right: 0;
 		}
+	}
 
-		&-info{
-			width: 74%;
-			display: inline-block;
-			vertical-align: middle;
-			padding: 0 30px 0 0;
-			box-sizing: border-box;
-		}
+	&__title{
+		font: 24px "Myriad Pro";
+		line-height: auto;
+		color: #000;
+		margin: 10px 0 5px 0;
+	}
 
-		&-name{
-			font-size: 28px;
-			color: #FF7437;
-			margin: 0 0 5px 0;
-		}
+	&__desc{
+		color: #000;
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
 
-		&-desc{
-			color: #fff;
-			font-size: 12px;
-			font-style: italic;
-			font-family: Helvetica;
+.social-share{
+	text-align: center;
+	
+	&__text{
+		color: #000;
+		font-size: 14px "Myriad Pro";
+		font-weight: bold;
+		margin: 0 0 10px 0;
+		text-transform: uppercase;
+	}
+
+	img{
+		width: 40px;
+		height: 40px;
+		margin: 0 2px;
+
+		&:hover{
+			opacity: .7;
+			cursor: pointer;
 		}
 	}
 }
 
-.f-box{
-	width: 33%;
-	display: inline-block;
+.slider{
 
-	.title{
-		font-size: 24px;
-		text-align: left;
+	&__title{
+		position: absolute;
+		top: 50%;
+		left: 10%;
+		
+		span{
+			font: 60px "Open Sans";
+			font-weight: bold;
+			text-transform: uppercase;
+			background: #000;
+			padding: 10px 20px;
+			line-height: 103px;
+		}
 	}
 
-	&__content{
-		padding: 0 40px;
+	.btn{
+		margin: 20px 0 0;
 	}
 }
+
+
 
