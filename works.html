@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.min.css">
+        <link rel="stylesheet" href="css/social-likes_flat.css">
+        <script src="js/libs/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+        <header>
+            <div class="wrp">
+				<a href=""><img src="i/logo_main.png" class="logo"></a>
+
+                <nav>
+                    <ul>
+                        <li>
+							<div></div>
+                        	<a href="">О нас</a></li>
+                        <li>
+							<div></div>
+                        	<a href="">Услуги</a></li>
+                        <li>
+							<div></div>
+                        	<a href="">Продукция</a></li>
+                        <li>
+							<div></div>
+                        	<a href="">Работы</a></li>
+                        <li>
+							<div></div>
+                        	<a href="">Статьи</a></li>
+                        <li>
+							<div></div>
+                        	<a href="">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+         
+        <main>
+            <div class="wrp">
+                
+                <div class="works">
+                    <div class="works__item">
+                        <img src="http://lorempixel/100/100/" alt="" class="works__item-photo">
+                        <div class="works__item-title">Work item title</div>
+                        <a href="" class="works__item-link"></a>
+                    </div>
+                    <div class="works__item">
+                        <img src="http://lorempixel/100/100/" alt="" class="works__item-photo">
+                        <div class="works__item-title">Work item title</div>
+                        <a href="" class="works__item-link"></a>
+                    </div>
+                    <div class="works__item">
+                        <img src="http://lorempixel/100/100/" alt="" class="works__item-photo">
+                        <div class="works__item-title">Work item title</div>
+                        <a href="" class="works__item-link"></a>
+                    </div>
+                    <div class="works__item">
+                        <img src="http://lorempixel/100/100/" alt="" class="works__item-photo">
+                        <div class="works__item-title">Work item title</div>
+                        <a href="" class="works__item-link"></a>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+
+        <footer>
+            <div class="wrp">
+            	<div class="copy">
+            		<span>
+            			<a href="">Stuntbike Customs</a><br>
+            			All right reserved. 2015
+            		</span>
+            	</div>
+            </div>
+        </footer>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.min.js"></script>
+        <script src="js/libs/masonry.js"></script>
+        <script src="js/libs/social-likes.min.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            $(function(){
+                var window_h = $(window).height();
+
+                $(".fotorama").fotorama({
+                    width: "100%",
+                    height: window_h - 85,
+                    fit: "cover",
+                    nav: false,
+                    transitionduration: 1000,
+                    loop: true,
+                    autoplay: 7000
+                });
+
+                var container = document.querySelector(".interview__masonry");
+                var msnry = new Masonry( container, {
+                  itemSelector: ".interview__item",
+                  animate: true,
+                  animationOptions: {
+                    duration: 700,
+                    queue: true
+                  }
+                });
+
+                $(".social-share a").on("click", function () {
+                    var $this = $(this);
+
+                    $(".social-likes").find(".social-likes__widget_" + $this.data("social")).click();
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>
